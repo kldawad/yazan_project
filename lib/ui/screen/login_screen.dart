@@ -54,9 +54,9 @@ class LoginScreen extends StatelessWidget {
                         shadowColor: MaterialStateProperty.all(
                           Color(0xFF828497),
                         ),
-                        backgroundColor: MaterialStateProperty.all(
-                          Color(0xFF74120C),
-                        ),
+                        // backgroundColor: MaterialStateProperty.all(
+                        //   Color(0xFF74120C),
+                        // ),
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
