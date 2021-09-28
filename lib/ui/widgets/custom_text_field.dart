@@ -4,32 +4,39 @@ class CustomTextField extends StatelessWidget {
   final String title;
   final bool? hiddenText;
   final TextInputType? keyboardType;
+  final Icon? icon;
 
-  CustomTextField({required this.title, this.hiddenText, this.keyboardType});
+  CustomTextField(
+      {required this.title, this.hiddenText, this.keyboardType, this.icon});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(right: 20, left: 20),
       child: TextField(
+        textAlign: TextAlign.center,
         obscureText: hiddenText!,
         keyboardType: keyboardType,
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.black),
         onChanged: (value) {},
         decoration: InputDecoration(
-          labelText: title,
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          labelStyle: TextStyle(color: Colors.white),
+          filled: true,
+          fillColor: Theme.of(context).canvasColor,
+          prefixIcon: Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: icon,
+          ),
+          hintText: title,
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(30),
             borderSide: BorderSide(
-              color: Color(0xFF74120C),
+              color: Theme.of(context).primaryColor,
             ),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(30),
             borderSide: BorderSide(
-              color: Color(0xFF74120C),
+              color: Theme.of(context).primaryColor,
             ),
           ),
           border: OutlineInputBorder(

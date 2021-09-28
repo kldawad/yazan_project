@@ -5,6 +5,7 @@ import 'package:yazan_project/ui/widgets/story_circle_avatar.dart';
 // Todo: story shadow
 // Todo: appBar appearance
 // Todo: text Theme
+// Todo: custom fonts and icons
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -101,6 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 25,
+                                  fontFamily: 'Cairo',
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -110,6 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 12,
+                                  fontFamily: 'Cairo',
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -124,6 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 10,
+                                  fontFamily: 'Cairo',
                                   fontWeight: FontWeight.bold,
                                 ),
                               )
@@ -152,6 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
+                          fontFamily: 'Cairo',
                           fontWeight: FontWeight.bold,
                         ),
                         textAlign: TextAlign.end,
@@ -204,6 +209,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 20,
+                      fontFamily: 'Cairo',
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.end,
@@ -249,12 +255,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Text(
                                       'علاء محمد',
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 30),
+                                          fontFamily: 'Cairo',
+                                          color: Colors.white,
+                                          fontSize: 30),
                                     ),
                                     Text(
                                       "المعدل: 99.2",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 20),
+                                          fontFamily: 'Cairo',
+                                          color: Colors.white,
+                                          fontSize: 20),
                                     ),
                                   ],
                                 ),
@@ -267,12 +277,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                             ),
                             SizedBox(
-                              height: 20,
+                              height: 10,
                             ),
                             Text(
-                              """ ما شاء الله استاذ رائع ومتميز, جبت عندو علامة كاملة, بنصحكم فيه والنتائج كانت واضحة من امتحانات التجريبي ، كنت الأكثر تفوقا بالصيفي  والكل سألني عن السر ، وقلت بكل ثقة الاستاذ يزن العقرباوي
-                              
-                              """,
+                              """ ما شاء الله استاذ رائع ومتميز, جبت عندو علامة كاملة, بنصحكم فيه والنتائج كانت واضحة من امتحانات التجريبي ، كنت الأكثر تفوقا بالصيفي  والكل سألني عن السر ، وقلت بكل ثقة الاستاذ يزن العقرباوي""",
+                              style: TextStyle(
+                                fontFamily: 'Cairo',
+                              ),
                               textAlign: TextAlign.center,
                             ),
                           ],
@@ -334,52 +345,52 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 15,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(),
-                Padding(
-                  padding: EdgeInsets.only(right: 20),
-                  child: Text(
-                    'تواصل مع الاستاذ يزن',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    textAlign: TextAlign.end,
-                  ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(50, 5, 0, 20),
-              child: Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 10),
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(50),
-                        bottomLeft: Radius.circular(50),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 10),
-                    color: Colors.red,
-                    height: 100,
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 10),
-                    color: Colors.red,
-                    height: 100,
-                  ),
-                ],
-              ),
-            )
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [
+            //     Container(),
+            //     Padding(
+            //       padding: EdgeInsets.only(right: 20),
+            //       child: Text(
+            //         'تواصل مع الاستاذ يزن',
+            //         style: TextStyle(
+            //           color: Colors.black,
+            //           fontSize: 20,
+            //           fontWeight: FontWeight.bold,
+            //         ),
+            //         textAlign: TextAlign.end,
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            // Padding(
+            //   padding: EdgeInsets.fromLTRB(50, 5, 0, 20),
+            //   child: Column(
+            //     children: [
+            //       Container(
+            //         margin: EdgeInsets.symmetric(vertical: 10),
+            //         height: 100,
+            //         decoration: BoxDecoration(
+            //           color: Colors.red,
+            //           borderRadius: BorderRadius.only(
+            //             topLeft: Radius.circular(50),
+            //             bottomLeft: Radius.circular(50),
+            //           ),
+            //         ),
+            //       ),
+            //       Container(
+            //         margin: EdgeInsets.symmetric(vertical: 10),
+            //         color: Colors.red,
+            //         height: 100,
+            //       ),
+            //       Container(
+            //         margin: EdgeInsets.symmetric(vertical: 10),
+            //         color: Colors.red,
+            //         height: 100,
+            //       ),
+            //     ],
+            //   ),
+            // )
           ],
         ),
       ),

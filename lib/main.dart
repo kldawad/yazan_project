@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:yazan_project/ui/screen/login_screen.dart';
+import 'package:yazan_project/ui/screen/welcome_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         //   ),
         // ),
       ),
-      home: LoginScreen(),
+      home: WelcomeScreen(),
     );
   }
 }
