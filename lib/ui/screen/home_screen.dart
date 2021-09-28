@@ -299,19 +299,87 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisSpacing: 10,
               children: [
                 CustomCard(
+                    title: 'إمتحانات محوسبة',
                     url:
                         'https://images.all-free-download.com/images/graphiclarge/student_background_studying_woman_sketch_cartoon_sketch_6843822.jpg'),
                 CustomCard(
+                    title: 'الدوسية',
                     url:
                         'https://thumbs.dreamstime.com/z/education-knowledge-mathematics-science-concept-tiny-male-character-learning-stationery-college-university-student-175865628.jpg'),
                 CustomCard(
+                    title: 'اسئلة سنوات سابقة',
                     url:
                         'https://thumbs.dreamstime.com/z/innovative-lab-people-study-human-brain-vector-illustration-cartoon-flat-tiny-doctor-scientist-character-studying-innovation-178489717.jpg'),
                 CustomCard(
+                    title: 'اطلب بطاقة موقع وتد',
                     url:
                         'https://st2.depositphotos.com/3126965/8936/v/600/depositphotos_89360332-stock-illustration-man-with-laptop.jpg'),
+                CustomCard(
+                    title: 'المراكز الثقافية',
+                    url:
+                        'https://image.shutterstock.com/shutterstock/photos/2025641873/display_1500/stock-vector-creative-ideas-and-technologies-concept-young-smiling-woman-female-character-going-with-laptop-2025641873.jpg'),
+                CustomCard(
+                    title: 'الدروس المجانية',
+                    url:
+                        'https://image.shutterstock.com/shutterstock/photos/2025641876/display_1500/stock-vector-great-creative-idea-and-innovation-concept-young-smiling-woman-cartoon-character-standing-showing-2025641876.jpg'),
               ],
             ),
+            Divider(
+              height: 20,
+              color: Theme.of(context).primaryColor,
+              indent: 70,
+              endIndent: 70,
+              thickness: 2,
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(),
+                Padding(
+                  padding: EdgeInsets.only(right: 20),
+                  child: Text(
+                    'تواصل مع الاستاذ يزن',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.end,
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(50, 5, 0, 20),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(50),
+                        bottomLeft: Radius.circular(50),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    color: Colors.red,
+                    height: 100,
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    color: Colors.red,
+                    height: 100,
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),

@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color(0xFFFAD02C),
         ),
         primaryIconTheme: IconThemeData(color: Colors.indigo),
-        cardColor: Color(0xFFc3979f),
+        cardColor: Color(0xFF333652),
         dividerColor: Color(0xFF333652),
         elevatedButtonTheme: ElevatedButtonThemeData(
             style: ButtonStyle(

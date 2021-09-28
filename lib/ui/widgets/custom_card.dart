@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
-  final String url;
-  CustomCard({required this.url});
+  final String url, title;
+  CustomCard({required this.url, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,10 @@ class CustomCard extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            Text('قم باختبار نفسك'),
+            Text(
+              title,
+              style: TextStyle(color: Colors.white),
+            ),
           ],
         ),
       ),
