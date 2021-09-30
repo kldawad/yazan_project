@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:yazan_project/ui/screen/quiz_screen.dart';
 import 'package:yazan_project/ui/widgets/custom_card.dart';
 import 'package:yazan_project/ui/widgets/story_circle_avatar.dart';
 
@@ -310,6 +312,9 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisSpacing: 10,
               children: [
                 CustomCard(
+                    ontap: () {
+                      Get.to(() => QuizScreen());
+                    },
                     title: 'إمتحانات محوسبة',
                     url:
                         'https://images.all-free-download.com/images/graphiclarge/student_background_studying_woman_sketch_cartoon_sketch_6843822.jpg'),
@@ -342,55 +347,6 @@ class _HomeScreenState extends State<HomeScreen> {
               endIndent: 70,
               thickness: 2,
             ),
-            SizedBox(
-              height: 15,
-            ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //   children: [
-            //     Container(),
-            //     Padding(
-            //       padding: EdgeInsets.only(right: 20),
-            //       child: Text(
-            //         'تواصل مع الاستاذ يزن',
-            //         style: TextStyle(
-            //           color: Colors.black,
-            //           fontSize: 20,
-            //           fontWeight: FontWeight.bold,
-            //         ),
-            //         textAlign: TextAlign.end,
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            // Padding(
-            //   padding: EdgeInsets.fromLTRB(50, 5, 0, 20),
-            //   child: Column(
-            //     children: [
-            //       Container(
-            //         margin: EdgeInsets.symmetric(vertical: 10),
-            //         height: 100,
-            //         decoration: BoxDecoration(
-            //           color: Colors.red,
-            //           borderRadius: BorderRadius.only(
-            //             topLeft: Radius.circular(50),
-            //             bottomLeft: Radius.circular(50),
-            //           ),
-            //         ),
-            //       ),
-            //       Container(
-            //         margin: EdgeInsets.symmetric(vertical: 10),
-            //         color: Colors.red,
-            //         height: 100,
-            //       ),
-            //       Container(
-            //         margin: EdgeInsets.symmetric(vertical: 10),
-            //         color: Colors.red,
-            //         height: 100,
-            //       ),
-            //     ],
-            //   ),
-            // )
           ],
         ),
       ),

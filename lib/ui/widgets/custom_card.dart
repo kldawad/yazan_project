@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
   final String url, title;
-  CustomCard({required this.url, required this.title});
+  final Function()? ontap;
+  CustomCard({required this.url, required this.title, this.ontap});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class CustomCard extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(10),
         splashColor: Colors.blue.withAlpha(30),
-        onTap: () {},
+        onTap: ontap,
         child: Column(
           children: [
             Container(

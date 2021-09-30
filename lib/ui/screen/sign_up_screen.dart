@@ -1,3 +1,4 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yazan_project/ui/screen/home_screen.dart';
@@ -29,26 +30,73 @@ class SignUpScreen extends StatelessWidget {
                   children: [
                     Image.asset('assets/sign_in.png'),
                     SizedBox(
-                      height: 35,
+                      height: 50,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
-                          Icons.mail,
-                          size: 50,
+                        Container(
+                          height: 50,
+                          width: 180,
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Google',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                ),
+                                Icon(
+                                  EvaIcons.google,
+                                  size: 40,
+                                  color: Colors.white,
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                         SizedBox(
-                          width: 20,
+                          width: 10,
                         ),
-                        Icon(
-                          Icons.mail,
-                          size: 50,
+                        Container(
+                          height: 50,
+                          width: 180,
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Facebook',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                ),
+                                CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  child: Icon(
+                                    EvaIcons.facebook,
+                                    size: 40,
+                                    color: Colors.blue,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ],
                     ),
                     Divider(
-                      height: 20,
+                      height: 50,
                       thickness: 2,
                       indent: 70,
                       endIndent: 70,

@@ -13,6 +13,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: ThemeData(
+        fontFamily: 'Cairo',
+        primaryTextTheme: TextTheme(
+          bodyText2: TextStyle(
+            fontFamily: 'Cairo',
+            fontSize: 20,
+          ),
+        ),
         primaryColor: Color(0xFF333652), // DarkBlue
         backgroundColor: Color(0xFFFAD02C), // yellow
         accentColor: Color(0xFF90ADC6), // lightBlue
@@ -31,14 +38,14 @@ class MyApp extends StatelessWidget {
         // ...........
 
         splashColor: Colors.teal,
-        // textTheme: TextTheme(
-        //   bodyText1: TextStyle(
-        //     color: Color(0xFFefcfe3),
-        //   ),
-        //   bodyText2: TextStyle(
-        //     color: Colors.yellow,
-        //   ),
-        // ),
+        textTheme: TextTheme(
+          bodyText1: TextStyle(
+            color: Colors.red,
+          ),
+          bodyText2: TextStyle(
+            color: Colors.black,
+          ),
+        ),
       ),
       home: WelcomeScreen(),
     );
