@@ -1,4 +1,8 @@
+import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:video_player/video_player.dart';
+import 'package:yazan_project/ui/screen/form_screen.dart';
 import 'package:yazan_project/ui/screen/quiz_screen.dart';
 import 'package:yazan_project/ui/widgets/custom_card.dart';
 import 'package:yazan_project/ui/widgets/story_circle_avatar.dart';
@@ -23,6 +27,31 @@ class _HomeScreenState extends State<HomeScreen> {
     Colors.blue,
     Colors.amber
   ];
+
+  final videoPlayerController = VideoPlayerController.network(
+      'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4');
+  ChewieController? chewieController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    chewieController = ChewieController(
+      videoPlayerController: videoPlayerController,
+      aspectRatio: 16 / 9,
+      autoPlay: true,
+      autoInitialize: true,
+      looping: true,
+    );
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    chewieController!.dispose();
+    chewieController!.pause();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -146,6 +175,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Column(
               children: [
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 15),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  width: MediaQuery.of(context).size.width,
+                  height: 220,
+                  child: Chewie(
+                    controller: chewieController!,
+                  ),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -352,6 +390,12 @@ class _HomeScreenState extends State<HomeScreen> {
               indent: 70,
               endIndent: 70,
               thickness: 2,
+            ),
+            TextButton(
+              onPressed: () {
+                Get.to(() => FormFieldScreen());
+              },
+              child: Text('go there'),
             ),
           ],
         ),

@@ -124,6 +124,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
                 child: PageView.builder(
                     onPageChanged: (value) {
+                      print('change');
                       setState(() {});
                     },
                     physics: NeverScrollableScrollPhysics(),
@@ -169,10 +170,7 @@ class _QuizScreenState extends State<QuizScreen> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    setState(() {
-                      count++;
-                      value = null;
-                    });
+                    setState(() {});
 
                     controller.nextPage(
                         duration: Duration(seconds: 1), curve: Curves.ease);
@@ -202,11 +200,8 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    setState(() {
-                      count--;
-                    });
+                    setState(() {});
 
-                    print(value);
                     controller.previousPage(
                         duration: Duration(seconds: 1), curve: Curves.ease);
                   },

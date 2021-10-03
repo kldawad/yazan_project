@@ -30,6 +30,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.3.8
   eva_icons_flutter: ^3.0.2
+  chewie: ^1.2.2
+  video_player: ^2.1.5
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +66,8 @@ flutter:
     - assets/785_generated.jpg
     - assets/asdaf.png
     - assets/bg.svg
+    - assets/video.mp4
+    - assets/sample_video.mp4
 
 
 
