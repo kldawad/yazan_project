@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:yazan_project/ui/screen/quiz_screen.dart';
 import 'package:yazan_project/ui/widgets/custom_card.dart';
 import 'package:yazan_project/ui/widgets/story_circle_avatar.dart';
@@ -313,7 +312,22 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 CustomCard(
                     ontap: () {
-                      Get.to(() => QuizScreen());
+                      Navigator.push(
+                          context,
+                          PageRouteBuilder(transitionsBuilder:
+                              (context, animation, animationTime, child) {
+                            animation = CurvedAnimation(
+                                parent: animation, curve: Curves.fastOutSlowIn);
+                            return ScaleTransition(
+                              alignment: Alignment.center,
+                              scale: animation,
+                              child: child,
+                            );
+                          }, pageBuilder: (BuildContext context,
+                              Animation<double> animation,
+                              Animation<double> secondaryAnimation) {
+                            return QuizScreen();
+                          }));
                     },
                     title: 'إمتحانات محوسبة',
                     url:
@@ -322,14 +336,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: 'الدوسية',
                     url:
                         'https://thumbs.dreamstime.com/z/education-knowledge-mathematics-science-concept-tiny-male-character-learning-stationery-college-university-student-175865628.jpg'),
-                CustomCard(
-                    title: 'اسئلة سنوات سابقة',
-                    url:
-                        'https://thumbs.dreamstime.com/z/innovative-lab-people-study-human-brain-vector-illustration-cartoon-flat-tiny-doctor-scientist-character-studying-innovation-178489717.jpg'),
-                CustomCard(
-                    title: 'اطلب بطاقة موقع وتد',
-                    url:
-                        'https://st2.depositphotos.com/3126965/8936/v/600/depositphotos_89360332-stock-illustration-man-with-laptop.jpg'),
                 CustomCard(
                     title: 'المراكز الثقافية',
                     url:

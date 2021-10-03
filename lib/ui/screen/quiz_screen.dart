@@ -1,35 +1,35 @@
 import 'package:flutter/material.dart';
 
-enum QuestionNum { question0, question1, question2, question3 }
-
 class QuizScreen extends StatefulWidget {
   @override
   _QuizScreenState createState() => _QuizScreenState();
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  QuestionNum? _questionNum;
-
   List<Map<dynamic, dynamic>> quiz = [
     {
+      'id': 1,
       'question':
           'https://ams3.digitaloceanspaces.com/files-watad-me/uploads/2019/12/1-2.jpg',
       'options': ['أ', 'ب', 'ج', 'د', 'ه'],
       'correctAnswer': 'ب',
     },
     {
+      'id': 2,
       'question':
           'https://ams3.digitaloceanspaces.com/files-watad-me/uploads/2019/12/2-2.jpg',
       'options': ['أ', 'ب', 'ج', 'د'],
       'correctAnswer': 'c',
     },
     {
+      'id': 3,
       "question":
           'https://ams3.digitaloceanspaces.com/files-watad-me/uploads/2019/12/3-2.jpg',
       'options': ['أ', 'ب', 'ج', 'د'],
       'correctAnswer': 'c',
     },
     {
+      'id': 4,
       "question":
           "https://ams3.digitaloceanspaces.com/files-watad-me/uploads/2019/12/7-2.jpg",
       "options": ["أ", "ب", "ج", "د"],
@@ -37,7 +37,31 @@ class _QuizScreenState extends State<QuizScreen> {
     },
   ];
 
+  int? value;
+  int count = 0;
+
   final PageController controller = PageController(initialPage: 0);
+
+  Widget getRadio() {
+    int number = 0;
+    print(number);
+    return Radio(
+      value: number + 2,
+      groupValue: value,
+      onChanged: (ind) {
+        print(number);
+        setState(() {
+          value = ind as int?;
+        });
+      },
+    );
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +73,7 @@ class _QuizScreenState extends State<QuizScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              height: 200,
+              height: 100,
             ),
             Padding(
               padding: EdgeInsets.only(right: 20),
@@ -57,14 +81,14 @@ class _QuizScreenState extends State<QuizScreen> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    "10/",
+                    "${quiz.length}/",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
                     ),
                   ),
                   Text(
-                    '1',
+                    '${quiz[count]['id']}',
                     style: TextStyle(
                       fontSize: 40,
                       color: Colors.white,
@@ -90,7 +114,7 @@ class _QuizScreenState extends State<QuizScreen> {
               height: 20,
             ),
             Container(
-                height: 400,
+                height: 500,
                 width: MediaQuery.of(context).size.width,
                 margin: EdgeInsets.fromLTRB(20, 0, 20, 20),
                 padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
@@ -99,43 +123,44 @@ class _QuizScreenState extends State<QuizScreen> {
                   borderRadius: BorderRadius.circular(50),
                 ),
                 child: PageView.builder(
-                    onPageChanged: (value) {},
+                    onPageChanged: (value) {
+                      setState(() {});
+                    },
                     physics: NeverScrollableScrollPhysics(),
                     controller: controller,
                     reverse: true,
                     itemCount: quiz.length,
                     itemBuilder: (context, index) {
                       return Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
                             child: Image.network(
                               quiz[index]['question'],
                             ),
                           ),
-                          for (int i = 0;
-                              i < quiz[index]['options'].length;
-                              i++)
-                            ListTile(
-                              title: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(),
-                                  Text(
-                                    quiz[index]['options'][i],
-                                  ),
-                                ],
-                              ),
-                              trailing: Radio<QuestionNum>(
-                                value: QuestionNum.question2,
-                                groupValue: _questionNum,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _questionNum = value;
-                                  });
-                                },
-                              ),
-                            ),
+                          ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              itemCount: quiz[index]['options'].length,
+                              itemBuilder: (context, number) {
+                                return Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(quiz[index]['options'][number]),
+                                    Radio(
+                                      value: number,
+                                      groupValue: value,
+                                      onChanged: (ind) {
+                                        print(number);
+                                        setState(() {
+                                          value = ind as int?;
+                                        });
+                                      },
+                                    ),
+                                  ],
+                                );
+                              })
                         ],
                       );
                     })),
@@ -144,9 +169,11 @@ class _QuizScreenState extends State<QuizScreen> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    // print(quiz[0]['question']);
-                    // print(quiz[0]['options'][0]);
-                    print(quiz[1]['options'].length);
+                    setState(() {
+                      count++;
+                      value = null;
+                    });
+
                     controller.nextPage(
                         duration: Duration(seconds: 1), curve: Curves.ease);
                   },
@@ -175,6 +202,11 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    setState(() {
+                      count--;
+                    });
+
+                    print(value);
                     controller.previousPage(
                         duration: Duration(seconds: 1), curve: Curves.ease);
                   },
